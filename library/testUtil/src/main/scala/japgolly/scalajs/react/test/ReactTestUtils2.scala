@@ -126,7 +126,7 @@ trait ReactTestUtils2 extends japgolly.scalajs.react.test.internal.ReactTestUtil
   def renderAsync[F[_], A](
     unmounted: A
   )(implicit F: Async[F], renderable: Renderable[A]): F[TestDomWithRoot] =
-    F.flatMap(F.pure(ReactTestUtils2.withReactRoot.setup(implicitly, new WithDsl.Cleanup)))(
+    F.flatMap(F.pure(withReactRoot.setup(implicitly, new WithDsl.Cleanup)))(
       root => F.map(actAsync(root.render(unmounted)))(_ => root.selectFirstChild())
     )
 
