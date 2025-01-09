@@ -113,7 +113,7 @@ object Lib {
   def preventPublication: PE =
     _.settings(publish / skip := true)
 
-  def utestSettings(scope: Configuration): PE =e
+  def utestSettings(scope: Configuration): PE =
     _.configure(InBrowserTesting.js)
       .settings(
         jsEnv                := new JSDOMNodeJSEnv(JSDOMNodeJSEnv.Config().withArgs("--experimental-worker" :: Nil)),

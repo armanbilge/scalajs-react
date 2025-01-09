@@ -135,7 +135,7 @@ object VdomTest extends TestSuite {
 
         ReactTestUtils2.withRenderedAsync_(c()) { _ =>
           assert(value.isInstanceOf[html.Input])
-        }.map(_ => assert(value eq null)).unsafeToJsPromise()
+        }.map(_ => assert(value eq null)).unsafeToFuture()
       }
 
       "ref" - {
